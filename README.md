@@ -1,6 +1,7 @@
 # L03_2
 
 resources: https://github.com/254534/L03_2/tree/master/app/src/main/res
+
 kotlin: https://github.com/254534/L03_2/tree/master/app/src/main/java/com/example/l03_1
 
 ![image](https://user-images.githubusercontent.com/92735548/144722551-8f6f1862-17a8-4c64-8ad4-12ce998dd718.png)
