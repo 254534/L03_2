@@ -1,11 +1,13 @@
 package com.example.l03_1
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import androidx.appcompat.app.AppCompatActivity
@@ -52,6 +54,19 @@ class Fragment1 : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         (requireActivity().findViewById(R.id.f1options) as RadioGroup)
             .setOnCheckedChangeListener(radioGroupListener)
+
+        val button1: Button = requireActivity().findViewById(R.id.button1)
+        button1.setOnClickListener { view ->
+            startActivity(
+                Intent(requireActivity(), TabsActivity::class.java)
+            )
+        }
+        val button2: Button = requireActivity().findViewById(R.id.button2)
+        button2.setOnClickListener { view ->
+            startActivity(
+                Intent(requireActivity(), TabsActivity2::class.java)
+            )
+        }
     }
     val radioGroupListener = RadioGroup.OnCheckedChangeListener { group, checkedId ->
         when (checkedId) {
