@@ -9,7 +9,10 @@
         android:id="@+id/fragment1"
         android:name="com.example.l03_1.Fragment1"
         android:label="fragment_1"
-        tools:layout="@layout/fragment_1" >
+        tools:layout="@layout/fragment_1"
+        app:launchSingleTop ="true"
+        app:popUpTo="@id/fragment1"
+        >
         <action
             android:id="@+id/action_fragment1_to_tabsActivity"
             app:destination="@id/tabsActivity" />
@@ -21,12 +24,16 @@
         android:id="@+id/swipeFragment"
         android:name="com.example.l03_1.SwipeFragment"
         android:label="fragment_swipe"
-        tools:layout="@layout/fragment_swipe" />
+        tools:layout="@layout/fragment_swipe"
+        app:launchSingleTop ="true"
+        />
     <fragment
         android:id="@+id/tabsFragment"
         android:name="com.example.l03_1.TabsFragment"
         android:label="fragment_tabs"
-        tools:layout="@layout/fragment_tabs" />
+        tools:layout="@layout/fragment_tabs"
+        app:launchSingleTop ="true"
+        />
     <activity
         android:id="@+id/tabsActivity2"
         android:name="com.example.l03_1.TabsActivity2"
