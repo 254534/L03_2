@@ -11,6 +11,7 @@ import android.widget.Button
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentTransaction
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -27,18 +28,39 @@ class Fragment1 : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
-    lateinit var actA: AppCompatActivity
-    lateinit var listF1:OnSelectListener
+//    lateinit var actA: AppCompatActivity
+//    lateinit var listF1:OnSelectListener
 
-    interface OnSelectListener {
-        fun onSelect(option: Int)
-    }
+    lateinit var f11: Fragment11
+    lateinit var f12: Fragment12
+    lateinit var myTrans: FragmentTransaction
+    private val TAG_F11 = "Fragment11"
+    private val TAG_F12 = "Fragment12"
+
+//    interface OnSelectListener {
+//        fun onSelect(option: Int)
+//    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
+        }
+
+        if (savedInstanceState == null) {
+            f11 = Fragment11()
+            f12 = Fragment12()
+            myTrans = childFragmentManager.beginTransaction()
+            myTrans.add(R.id.fg_container2, f11, this.TAG_F11)
+            myTrans.detach(f11)
+            myTrans.add(R.id.fg_container2, f12, this.TAG_F12)
+            myTrans.detach(f12)
+            myTrans.commit()
+        }
+        else {
+            f11 = childFragmentManager.findFragmentByTag(this.TAG_F11) as Fragment11
+            f12 = childFragmentManager.findFragmentByTag(this.TAG_F12) as Fragment12
         }
     }
 
@@ -56,23 +78,31 @@ class Fragment1 : Fragment() {
             .setOnCheckedChangeListener(radioGroupListener)
 
         val button1: Button = requireActivity().findViewById(R.id.button1)
-        button1.setOnClickListener { view ->
+        button1.setOnClickListener {
             startActivity(
                 Intent(requireActivity(), TabsActivity::class.java)
             )
         }
         val button2: Button = requireActivity().findViewById(R.id.button2)
-        button2.setOnClickListener { view ->
+        button2.setOnClickListener {
             startActivity(
                 Intent(requireActivity(), TabsActivity2::class.java)
             )
         }
     }
     val radioGroupListener = RadioGroup.OnCheckedChangeListener { group, checkedId ->
+        myTrans = childFragmentManager.beginTransaction()
         when (checkedId) {
-            R.id.radioButton1 -> listF1.onSelect(1)
-            R.id.radioButton2 -> listF1.onSelect(2)
+            R.id.radioButton1 -> {
+                myTrans.detach(f12)
+                myTrans.attach(f11)
+            }
+            R.id.radioButton2 -> {
+                myTrans.detach(f11)
+                myTrans.attach(f12)
+            }
         }
+        myTrans.commit()
     }
 
 
@@ -96,14 +126,14 @@ class Fragment1 : Fragment() {
 //            }
 //    }
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        try {
-            actA = context as AppCompatActivity
-            listF1 = context as OnSelectListener
-        }
-        catch (e: ClassCastException) {
-            throw java.lang.ClassCastException(actA.toString() + "musi implementować OnSelectListener")
-        }
-    }
+//    override fun onAttach(context: Context) {
+//        super.onAttach(context)
+//        try {
+//            actA = context as AppCompatActivity
+//            listF1 = context as OnSelectListener
+//        }
+//        catch (e: ClassCastException) {
+//            throw java.lang.ClassCastException(actA.toString() + "musi implementować OnSelectListener")
+//        }
+//    }
 }

@@ -40,7 +40,7 @@
             android:id="@+id/f1options"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/fg_container2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tableLayout">
@@ -59,6 +59,14 @@
 
 
         </RadioGroup>
+
+        <FrameLayout
+            android:id="@+id/fg_container2"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+        </FrameLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
