@@ -7,6 +7,7 @@
     <item
         android:id="@+id/button2_m"
         android:icon="?attr/actionModePasteDrawable"
+        
         android:title="Center" />
     <item
         android:id="@+id/button3_m"

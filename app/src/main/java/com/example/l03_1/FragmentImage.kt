@@ -11,10 +11,10 @@ private const val ARG_PARAM1 = "param1"
 
 class FragmentImage : Fragment() {
     private val imageArr: IntArray = intArrayOf(
-        R.drawable.img1,
-        R.drawable.img2,
-        R.drawable.img3,
-        R.drawable.img4)
+        R.drawable.z1,
+        R.drawable.z2,
+        R.drawable.z3,
+        R.drawable.z4)
     private var param1: Int? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
