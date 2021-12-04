@@ -59,7 +59,7 @@ class MySwipeAdapter(fg: Fragment): FragmentStateAdapter(fg) {
         return FragmentImage.newInstance(position)
     }
     override fun getItemCount(): Int {
-        return 2
+        return 4
     }
 
 //    override fun getPageTitle(position: Int): CharSequence? {

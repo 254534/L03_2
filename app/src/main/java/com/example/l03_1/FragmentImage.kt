@@ -26,7 +26,7 @@ class FragmentImage : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val imageView: ImageView = requireActivity().findViewById(R.id.imageViewNoContent)
+        val imageView: ImageView = view.findViewById(R.id.imageViewNoContent)
         imageView.setImageResource(imageArr[param1!!])
     }
 

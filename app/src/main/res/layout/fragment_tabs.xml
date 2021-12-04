@@ -10,13 +10,13 @@
         android:layout_height="match_parent">
 
         <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appbar"
+            android:id="@+id/appbarTabs"
 
             android:layout_height="wrap_content"
             android:layout_width="match_parent">
 
             <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tabs2"
+                android:id="@+id/tabs2Tabs"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -24,7 +24,7 @@
         </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/vpager2"
+            android:id="@+id/vpager2Tabs"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
