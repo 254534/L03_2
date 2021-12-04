@@ -8,35 +8,23 @@
     >
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fg1container"
-        android:name="com.example.l03_1.Fragment1"
+        android:id="@+id/fragmentContainerView"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="600dp"
+        app:defaultNavHost="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="0dp" />
+        app:navGraph="@navigation/nav_graph" />
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu"
+        />
 
-<!--    <TableLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        tools:layout_editor_absoluteX="1dp">-->
-
-<!--        <TableRow>-->
-<!--            <Button-->
-<!--                android:id="@+id/button1"-->
-<!--                android:layout_weight="1"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_margin="3dp"-->
-<!--                android:text="vp1" />-->
-
-<!--            <Button-->
-<!--                android:id="@+id/button2"-->
-<!--                android:layout_weight="1"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_margin="3dp"-->
-<!--                android:text="vp2" />-->
-<!--        </TableRow>-->
-
-<!--    </TableLayout>-->
 </androidx.constraintlayout.widget.ConstraintLayout>
