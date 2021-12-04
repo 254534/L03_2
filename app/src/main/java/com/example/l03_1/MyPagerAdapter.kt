@@ -53,3 +53,16 @@ class MyPagerAdapter3(fg: Fragment): FragmentStateAdapter(fg) {
 //        return
 //    }
 }
+
+class MySwipeAdapter(fg: Fragment): FragmentStateAdapter(fg) {
+    override fun createFragment(position: Int): Fragment {
+        return FragmentImage.newInstance(position)
+    }
+    override fun getItemCount(): Int {
+        return 2
+    }
+
+//    override fun getPageTitle(position: Int): CharSequence? {
+//        return
+//    }
+}
