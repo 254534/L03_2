@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragment1">
 
+    <fragment
+        android:id="@+id/fragment1"
+        android:name="com.example.l03_1.Fragment1"
+        android:label="fragment_1"
+        tools:layout="@layout/fragment_1" >
+        <action
+            android:id="@+id/action_fragment1_to_tabsActivity"
+            app:destination="@id/tabsActivity" />
+        <action
+            android:id="@+id/action_fragment1_to_tabsActivity2"
+            app:destination="@id/tabsActivity2" />
+    </fragment>
+    <fragment
+        android:id="@+id/swipeFragment"
+        android:name="com.example.l03_1.SwipeFragment"
+        android:label="fragment_swipe"
+        tools:layout="@layout/fragment_swipe" />
+    <fragment
+        android:id="@+id/tabsFragment"
+        android:name="com.example.l03_1.TabsFragment"
+        android:label="fragment_tabs"
+        tools:layout="@layout/fragment_tabs" />
+    <activity
+        android:id="@+id/tabsActivity2"
+        android:name="com.example.l03_1.TabsActivity2"
+        android:label="TabsActivity2" />
+    <activity
+        android:id="@+id/tabsActivity"
+        android:name="com.example.l03_1.TabsActivity"
+        android:label="activity_tabs"
+        tools:layout="@layout/activity_tabs" />
 </navigation>
