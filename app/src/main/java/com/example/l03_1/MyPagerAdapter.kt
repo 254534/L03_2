@@ -39,3 +39,17 @@ class MyPagerAdapter2(fa: FragmentActivity): FragmentStateAdapter(fa) {
 //    }
 }
 
+class MyPagerAdapter3(fg: Fragment): FragmentStateAdapter(fg) {
+    override fun createFragment(position: Int): Fragment {
+        if (position == 0)
+            return Fragment11.newInstance("f11", "Page # 1")
+        return Fragment12.newInstance("f12", "Page # 2")
+    }
+    override fun getItemCount(): Int {
+        return 2
+    }
+
+//    override fun getPageTitle(position: Int): CharSequence? {
+//        return
+//    }
+}
